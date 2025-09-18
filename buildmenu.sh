@@ -92,7 +92,7 @@ if config.has_section('${PROJECT_NAME}'):
 ")
 
 if [[ "${RELEASE_TAG:-}" == "" ]] ; then
-    RELEASE_TAG="Purple OSD Background"
+    RELEASE_TAG="Purple_OSD_Background"
 fi
 echo "RELEASE_TAG: ${RELEASE_TAG}"
 
