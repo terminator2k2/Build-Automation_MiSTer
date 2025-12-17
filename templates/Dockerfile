@@ -1,5 +1,7 @@
-FROM <<DOCKER_IMAGE>>
+FROM <<DOCKER_IMAGE>> AS builder
 WORKDIR /project
 ADD . /project
 RUN <<COMPILATION_COMMAND>>
-CMD cat /project/<<COMPILATION_OUTPUT>>
+
+FROM scratch AS artifact
+COPY --from=builder /project/<<COMPILATION_OUTPUT>> /project/<<COMPILATION_OUTPUT>>
